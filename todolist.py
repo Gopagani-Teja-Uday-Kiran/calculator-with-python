@@ -1,0 +1,26 @@
+import tkinter
+from tkinter import *
+root=Tk()
+def add():
+    content=label5.get(1.0,END)
+    label4.insert(END,content)
+    label5.delete(1.0,END)
+def delete():
+    delete=label4.curselection()  
+    label4.delete(END,delete)  
+root.title('to-do-list')
+label1=Label(root,text='To-Do-list',font=("ariel 16 bold"),bg='orange',fg='black',bd=5)
+label1.pack(side=TOP,fill=BOTH)
+label2=Label(root,text='add tasks',font=("ariel 16 bold"),bg='orange',fg='black',bd=5)
+label2.place(x=50,y=50)
+label3=Label(root,text='tasks',font=("ariel 16 bold"),bg='orange',fg='black',bd=5,padx=5,pady=5)
+label3.place(x=950,y=50)
+label4=Listbox(font=("ariel 16 bold"),height=100,width=100,fg='black')
+label4.place(x=550,y=100)
+label5=Text(root,font=("ariel 16 bold"),width=30,fg='black',bg='orange')
+label5.place(x=50,y=100)
+label6=Button(root,text='ADD',font=("ariel 16 bold"),fg='black',bg='orange',bd=5,command=add)
+label6.place(x=50,y=700)
+label6=Button(root,text='Delete',font=("ariel 16 bold"),fg='black',bg='orange',bd=5,command=delete)
+label6.place(x=150,y=700)
+root.mainloop()
