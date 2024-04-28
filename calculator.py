@@ -1,0 +1,71 @@
+from tkinter import *
+mw=Tk()
+mw.title("calculator")
+def text():
+    label=Label(text='here is your calculator',font=('Arial',22))
+    label.grid(row=0,column=2,padx=50)
+tx=text()
+def buttons(num):
+    fst=input.get()
+    sec=fst+str(num)
+    button()
+    input.insert(0,sec)
+def button():
+    input.delete(0,END)
+def opp():
+   if buttons!=input.get():
+      k=eval(input.get())
+      button() 
+      input.insert(0,k)
+   else:
+        button()
+        input.insert(END,'Error')                                 
+input=Entry(mw,font=('Arial',32),width=54,bg='#c4918d',fg='#45768f',justify=RIGHT)
+btn1=Button(mw,text="(",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('('))
+btn2=Button(mw,text=")",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons(')'))
+btn3=Button(mw,text="%",font=('Arial',22),bg='black',fg='white',padx=40,pady=15,command=lambda:buttons('%'))
+btn4=Button(mw,text="AC",font=('Arial',22),bg='black',fg='white',padx=40,pady=15,command=button)
+btn5=Button(mw,text="7",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('7'))
+btn6=Button(mw,text="8",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('8'))
+btn7=Button(mw,text="9",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('9'))
+btn8=Button(mw,text="+",font=('Arial',22),bg='black',fg='white',padx=40,pady=15,command=lambda:buttons('+'))
+btn9=Button(mw,text="4",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('4'))
+bt1=Button(mw,text="5",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('5'))
+bt2=Button(mw,text="6",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('6'))
+bt3=Button(mw,text="*",font=('Arial',22),bg='black',fg='white',padx=40,pady=15,command=lambda:buttons('*'))
+bt4=Button(mw,text="1",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('1'))
+bt5=Button(mw,text="2",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('2'))
+bt6=Button(mw,text="3",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('3'))
+bt7=Button(mw,text="-",font=('Arial',22),bg='black',fg='white',padx=40,pady=15,command=lambda:buttons('-'))
+bt8=Button(mw,text="0",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('0'))
+bt9=Button(mw,text=".00",font=('Arial',22),bg='#7ccc93',fg='#45768f',padx=40,pady=15,command=lambda:buttons('.00'))
+b1=Button(mw,text="=",font=('Arial',22),bg='black',fg='white',padx=40,pady=15,command=opp)
+b2=Button(mw,text="/",font=('Arial',22),bg='black',fg='white',padx=40,pady=15,command=lambda:buttons('/'))
+
+btn1.grid(row=2,column=0,padx=40,pady=2)
+btn2.grid(row=2,column=1,padx=40,pady=2)
+btn3.grid(row=2,column=2,padx=40,pady=2)
+btn4.grid(row=2,column=3,padx=40,pady=2)
+
+btn5.grid(row=3,column=0,padx=40,pady=2)
+btn6.grid(row=3,column=1,padx=40,pady=2)
+btn7.grid(row=3,column=2,padx=40,pady=2)
+btn8.grid(row=3,column=3,padx=40,pady=2)
+
+btn9.grid(row=4,column=0,padx=40,pady=2)
+bt1.grid(row=4,column=1,padx=40,pady=2)
+bt2.grid(row=4,column=2,padx=40,pady=2)
+bt3.grid(row=4,column=3,padx=40,pady=2)
+
+bt4.grid(row=5,column=0,padx=40,pady=2)
+bt5.grid(row=5,column=1,padx=40,pady=2)
+bt6.grid(row=5,column=2,padx=40,pady=2)
+bt7.grid(row=5,column=3,padx=40,pady=2)
+
+bt8.grid(row=6,column=0,padx=40,pady=2)
+bt9.grid(row=6,column=1,padx=40,pady=2)
+b1.grid(row=6,column=2,padx=40,pady=2)
+b2.grid(row=6,column=3,padx=40,pady=2)
+
+input.grid(row=1,column=0,columnspan=4,padx=40,pady=15)
+mw.mainloop()
